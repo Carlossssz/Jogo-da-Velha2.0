@@ -48,11 +48,9 @@ class Vez{
                             somar(3, bkName);
                     }
 
-                    setTimeout(() =>{
-                        if (blocoAtual.velhinha === 0){
-                            deuVelha(bkName, velha);
-                        }
-                    }, 100) 
+                    if (blocoAtual.velhinha === 0){
+                        deuVelha(bkName, velha);
+                    }
 
                 }
             }
@@ -77,11 +75,9 @@ class Vez{
                             somar(-3, bkName);
                     }
 
-                    setTimeout(() =>{
-                        if (blocoAtual.velhinha === 0){
-                            deuVelha(bkName, velha);
-                        }
-                    }, 100) 
+                    if (blocoAtual.velhinha === 0){
+                        deuVelha(bkName, velha);
+                    }
                     
                 }
             }
@@ -233,8 +229,8 @@ function somaTotal(x, objeto){
 function deuVelha(nomeBk, velha){
     let bk = instanciaPorBloco[nomeBk]; //Armazena a lista de objetos do "bk(?)" atual, dentro da constante "bk".
 
-    let bList = bk.slice(1, 9) //Pega os itens de "bk(?)" atual do índice 1 a 9, ignorando o "velhinha"
-    let todosZero = bList.every(function(elemento){ //Every verifica se todos os itens do array aceitam a condição da função callback.
+    //let bList = bk.slice(1, 9) //Pega os itens de "bk(?)" atual do índice 1 a 9, ignorando o "velhinha"
+    let todosZero = bk.every(function(elemento){ //Every verifica se todos os itens do array aceitam a condição da função callback.
         return elemento.soma !== 0; //Esse é a condição. Se todos os quadradinhos possuem soma diferente de 0. Se sim, retorna "True".
     })
 
@@ -245,7 +241,7 @@ function deuVelha(nomeBk, velha){
 
     if(todosZero && velha === 0){
         playSound("audios/failMenor.mp3");
-        bk.velhinha = "";
+        bk.velhinha = "velha";
 
         let div = document.createElement("div");
         div.classList.add("velha-point");
@@ -302,7 +298,7 @@ function blocoJogada(quadradinho, objeto){
         }
         let resultadoProximoBloco = ProximoBloco();
 
-        if(blocoAtual.indice === quadradoIndice && resultadoProximoBloco.velhinha === 0){ /*Encontra o bloco que possui o indice igual ao do quadradinho. Se ele tiver "velhinha" === 0, o que significa que ainda não deu velha nela, será marcado apenas aquele bloco;  
+        if(blocoAtual.indice === quadradoIndice && resultadoProximoBloco.velhinha === 0){ /*Encontra o bloco que possui o indice igual ao do quadradinho. Se ele tiver "velhinha" === 0, o que significa que ainda não deu velha nela, será marcado apenas aquele bloco;
         Do contrário, liberará para todos os blocos serem clicados */
         
         //iterar sobre o bloco que possui o indice aceitável, e definir os quadradinhos como false, exceto os quadrados preenchidos, os preenchidos é só verificar se "soma === 0"
@@ -311,7 +307,7 @@ function blocoJogada(quadradinho, objeto){
                     element.trueOrFalse = false;
                 }
             })
-        }else if(blocoAtual.indice === quadradoIndice && resultadoProximoBloco.velhinha !== 0){
+        }else if(blocoAtual.indice === quadradoIndice && resultadoProximoBloco.velhinha !== 0){ 
             pontoNoCanto(instanciaPorBloco);
         }
     }
