@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     user-select: none;
+    overflow: hidden;
 }
 
 body{
@@ -162,6 +163,7 @@ body{
     justify-content: center;
     background: rgba(29, 29, 29, 0.932);
     filter: blur(100%);
+    z-index: 1;
 }
 
 #fimDeJogo{
@@ -173,6 +175,20 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 5;
+}
+
+@media (max-width: 480px){
+    #fimFundo{
+        visibility: hidden;
+    }
+
+    #fimDeJogo{
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
 }
 
 #vencedor{

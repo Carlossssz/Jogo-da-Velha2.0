@@ -411,8 +411,10 @@ function reset(){
     }
     
     //Placar Some
-    let fimPlacar = document.querySelector("#fimFundo");
-    fimPlacar.style.display = "none";
+    let fimFundo = document.querySelector("#fimFundo");
+    let fimDeJogo = document.querySelector("#fimDeJogo");
+    fimFundo.style.display = "none";
+    fimDeJogo.style.display = "none";
 }
 
 let jogadorX = 0;
@@ -434,6 +436,9 @@ function placar(quemFoi){
 }
 
 function placarAparece(){
-    let fimPlacar = document.querySelector("#fimFundo");
-    fimPlacar.style.display = "flex";
+    let fimFundo = document.querySelector("#fimFundo");
+    fimFundo.style.display = "flex"; 
+
+    let fimDeJogo = document.querySelector("#fimDeJogo");
+    fimDeJogo.style.display = "flex"
 }
