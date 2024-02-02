@@ -3,3 +3,5 @@ Trata-se de um jogo da velha composto por 9 tabuleiros 3x3. O jogo começa com o
 Quando um jogador faz uma linha de 3 símbolos iguais em um tabuleiro 3x3, esse tabuleiro é marcado com o símbolo do jogador (X ou O). Se um jogador selecionar um quadradinho correspondente a um tabuleiro 3x3 que já estiver finalizado, o próximo jogador poderá selecionar em qualquer lugar do jogo.
 
 O objetivo é vencer marcando uma linha de 3 pontos, tanto vertical quanto diagonalmente, assim como no jogo da velha tradicional.
+
+Link para jogar: https://carlossssz.github.io/Jogo-da-Velha2.0/
